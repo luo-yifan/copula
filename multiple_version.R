@@ -37,7 +37,7 @@ total_wl_list = list()
 ####################################################
 #### Constants
 ####################################################
-dice <- c(0)
+dice <- c(0,1,2,3,4,5,6,7,8,9)
 for(dice_index in dice){
   months <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
   lakes <- c("Lake Superior", "Lake Michigan-Huron", "Lake Erie")
@@ -370,7 +370,7 @@ for(s in 1:3){
   par(mfrow = c(3, 1))
     plot(total_wl_list[[s]][[1]][1,],xlab="Month",ylab="Water level (m)",ylim=c(182,185),type='l',col='blue',main='Superior Water levels')
     for(i in 2:gen) {
-      for(index_i in 0:1){
+      for(index_i in 0:9){
         current = index_i*3 + s
         points(total_wl_list[[current]][[1]][i,],type='l',col=rainbow(gen)[sample.int(gen,1)])
       }
@@ -379,7 +379,7 @@ for(s in 1:3){
     
     plot(total_wl_list[[s]][[2]][1,],xlab="Month",ylab="Water level (m)",ylim=c(175,178),type='l',col='blue',main='Michigan-Huron Water levels')
     for(i in 2:gen) {
-      for(index_i in 0:1){
+      for(index_i in 0:9){
         current = index_i*3 + s
         points(total_wl_list[[current]][[2]][i,],type='l',col=rainbow(gen)[sample.int(gen,1)])
       }
@@ -388,7 +388,7 @@ for(s in 1:3){
     
     plot(total_wl_list[[s]][[3]][1,],xlab="Month",ylab="Water level (m)",ylim=c(173,176),type='l',col='blue',main='Erie Water levels')
     for(i in 2:gen) {
-      for(index_i in 0:1){
+      for(index_i in 0:9){
         current = index_i*3 + s
         points(total_wl_list[[current]][[3]][i,],type='l',col=rainbow(gen)[sample.int(gen,1)])
       }
@@ -406,7 +406,7 @@ for(s in 1:3){
     plot(total_out_list[[s]][[1]][1,],xlab="",ylab="",ylim=c(0,8000),type='l',col='red',main='',cex.main=2,cex.axis=1.5,cex.lab=2,xaxt='n')
     title(main="Superior Outflow",line = -2,cex.main=2.5)
     for(i in 2:gen) {
-      for(index_i in 0:1){
+      for(index_i in 0:9){
         current = index_i*3 + s
         points(total_out_list[[current]][[1]][i,],type='l',col=rainbow(gen)[sample.int(gen,1)])
       }
@@ -418,7 +418,7 @@ for(s in 1:3){
     title(ylab=expression(Outflow ~ (cm^"3")),line=2,cex.lab=2)
     title(main="Michigan-Huron Outflow",line = -2,cex.main=2.5)
     for(i in 2:gen) {
-      for(index_i in 0:1){
+      for(index_i in 0:9){
         current = index_i*3 + s
         points(total_out_list[[current]][[2]][i,],type='l',col=rainbow(gen)[sample.int(gen,1)])
       }
@@ -430,7 +430,7 @@ for(s in 1:3){
     plot(total_out_list[[current]][[3]][1,],xlab="Month",ylab="",ylim=c(2000,10000),type='l',col='red',main='',cex.main=2,cex.axis=1.5,cex.lab=2)
     title(main="Erie Outflow",line = -2,cex.main=2.5)
     for(i in 2:gen) {
-      for(index_i in 0:1){
+      for(index_i in 0:9){
         current = index_i*3 + s
         points(total_out_list[[current]][[3]][i,],type='l',col=rainbow(gen)[sample.int(gen,1)])
       }
@@ -439,4 +439,3 @@ for(s in 1:3){
 
   dev.off()
 } 
-gen=999
