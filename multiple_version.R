@@ -37,9 +37,8 @@ total_wl_list = list()
 ####################################################
 #### Constants
 ####################################################
-dice <- c(0,1,2,3,4,5,6,7,8,9)
+dice <- c(0)
 for(dice_index in dice){
-dice_index = 0
   months <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
   lakes <- c("Lake Superior", "Lake Michigan-Huron", "Lake Erie")
   S_SF 	<- 82103	 	# Lake Superior Surface Area
@@ -361,4 +360,83 @@ dice_index = 0
   total_wl_list <- c(total_wl_list, total_wl)
   
 }
-save(total_out_list, total_wl_list, file = "data100.RData")
+save(total_out_list, total_wl_list, file = "data10.RData")
+
+## Water level Plots
+Wl_plot_name <- c("scenario1_wl_10.pdf","scenario2_wl_10.pdf","scenario3_wl_10.pdf")
+for(s in 1:3){
+  # water level plot
+  pdf(paste(plot.dir, Wl_plot_name[[s]], sep=""), width = 14, height = 20, paper = "special",onefile = FALSE) # create pdf
+  par(mfrow = c(3, 1))
+    plot(total_wl_list[[s]][[1]][1,],xlab="Month",ylab="Water level (m)",ylim=c(182,185),type='l',col='blue',main='Superior Water levels')
+    for(i in 2:gen) {
+      for(index_i in 0:1){
+        current = index_i*3 + s
+        points(total_wl_list[[current]][[1]][i,],type='l',col=rainbow(gen)[sample.int(gen,1)])
+      }
+    }
+    if(s==1) points(as.vector(t(outflowData[[1]][c(1:50),])),type='l',lwd=3)
+    
+    plot(total_wl_list[[s]][[2]][1,],xlab="Month",ylab="Water level (m)",ylim=c(175,178),type='l',col='blue',main='Michigan-Huron Water levels')
+    for(i in 2:gen) {
+      for(index_i in 0:1){
+        current = index_i*3 + s
+        points(total_wl_list[[current]][[2]][i,],type='l',col=rainbow(gen)[sample.int(gen,1)])
+      }
+    }
+    if(s==1) points(as.vector(t(outflowData[[3]][c(1:50),])),type='l',lwd=3)
+    
+    plot(total_wl_list[[s]][[3]][1,],xlab="Month",ylab="Water level (m)",ylim=c(173,176),type='l',col='blue',main='Erie Water levels')
+    for(i in 2:gen) {
+      for(index_i in 0:1){
+        current = index_i*3 + s
+        points(total_wl_list[[current]][[3]][i,],type='l',col=rainbow(gen)[sample.int(gen,1)])
+      }
+    }
+    if(s==1) points(as.vector(t(outflowData[[5]][c(1:50),])),type='l',lwd=3)
+    dev.off()
+}
+
+## Outflow Plots 
+out_plot_name <- c("scenario1_out_10.pdf","scenario2_out_10.pdf","scenario3_out_10.pdf")
+for(s in 1:3){
+  pdf(paste(plot.dir, out_plot_name[s], sep=""), width = 14, height = 18, paper = "special",onefile = TRUE) # create pdf
+  par(mfrow = c(3,1))
+    par(mar=c(0,5,5,5))
+    plot(total_out_list[[s]][[1]][1,],xlab="",ylab="",ylim=c(0,8000),type='l',col='red',main='',cex.main=2,cex.axis=1.5,cex.lab=2,xaxt='n')
+    title(main="Superior Outflow",line = -2,cex.main=2.5)
+    for(i in 2:gen) {
+      for(index_i in 0:1){
+        current = index_i*3 + s
+        points(total_out_list[[current]][[1]][i,],type='l',col=rainbow(gen)[sample.int(gen,1)])
+      }
+    }
+    if(s==1) points(as.vector(t(outflowData[[2]][c(1:50),])),type='l',lwd=3)
+    
+    par(mar=c(0,5,0,5))
+    plot(total_out_list[[current]][[2]][1,],xlab="",ylab="",ylim=c(2000,10000),type='l',col='red',main='',cex.main=2,cex.axis=1.5,cex.lab=2,xaxt='n')
+    title(ylab=expression(Outflow ~ (cm^"3")),line=2,cex.lab=2)
+    title(main="Michigan-Huron Outflow",line = -2,cex.main=2.5)
+    for(i in 2:gen) {
+      for(index_i in 0:1){
+        current = index_i*3 + s
+        points(total_out_list[[current]][[2]][i,],type='l',col=rainbow(gen)[sample.int(gen,1)])
+      }
+    }
+     
+    if(s == 1) points(as.vector(t(outflowData[[4]][c(1:50),])),type='l',lwd=3)
+
+    par(mar=c(5,5,0,5))
+    plot(total_out_list[[current]][[3]][1,],xlab="Month",ylab="",ylim=c(2000,10000),type='l',col='red',main='',cex.main=2,cex.axis=1.5,cex.lab=2)
+    title(main="Erie Outflow",line = -2,cex.main=2.5)
+    for(i in 2:gen) {
+      for(index_i in 0:1){
+        current = index_i*3 + s
+        points(total_out_list[[current]][[3]][i,],type='l',col=rainbow(gen)[sample.int(gen,1)])
+      }
+    }
+    if(s==1 ) points(as.vector(t(outflowData[[6]][c(1:50),])),type='l',lwd=3)
+
+  dev.off()
+} 
+gen=999
