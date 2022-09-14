@@ -1,0 +1,90 @@
+Observed Long Term Average Outflow
+	Lake Superior: 2229.415 
+	Lake Michigan-Huron: 5419.43166666667 
+	Lake Erie: 6084.765 
+Simulated Long Term Average Outflow
+	Lake Superior: NA 
+	Lake Michigan-Huron: NA 
+	Lake Erie: NA 
+Observed Annual Average NBS (1950-2019)
+	Lake Superior: 66.5964880952381 
+	Lake Michigan-Huron: 84.1372976190476 
+	Lake Erie: 73.2743928571429 
+Simulated Average Annual NBS Scenario 1 (temp:SC1-RM)
+	Lake Superior: 64.9159818383974 
+	Lake Michigan-Huron: 83.4857909532849 
+	Lake Erie: 70.5723090646683 
+Simulated Average Annual NBS Scenario 2 (temp:SC1-PM)
+	Lake Superior: 70.8665208435235 
+	Lake Michigan-Huron: 84.9469314374743 
+	Lake Erie: 75.9195965255015 
+Simulated Average Annual NBS Scenario 3 (temp:SC1-asdsaM)
+	Lake Superior: 67.1908689247736 
+	Lake Michigan-Huron: 84.8236136287243 
+	Lake Erie: 77.3019914967515 
+Observed Long Term Average Water Level (1950-2019)
+	Lake Superior: 183.44065 
+	Lake Michigan-Huron: 176.58905 
+	Lake Erie: 174.300016666667 
+Simulated Long Term Average Water Level Scenario 1 (temp:SC1-RM)
+	Lake Superior: NA 
+	Lake Michigan-Huron: NA 
+	Lake Erie: NA 
+Simulated Long Term Average Water Level Scenario 2 (temp:SC1-PM)
+	Lake Superior: NA 
+	Lake Michigan-Huron: NA 
+	Lake Erie: NA 
+Simulated Long Term Average Water Level Scenario 3 (temp:SC1-asdsaM)
+	Lake Superior: NA 
+	Lake Michigan-Huron: NA 
+	Lake Erie: NA 
+Observed Peak Month
+	Lake Superior: Sep 8.87096774193548 
+ 	Lake Superior: Oct 8.87096774193548 
+	Lake Michigan-Huron: Jul 7.546875 
+ 	Lake Michigan-Huron: Aug 7.546875 
+	Lake Erie: Jul 6.21428571428571 
+Observed Trough Month
+	Lake Superior: Apr 4.18965517241379 
+	Lake Michigan-Huron: Mar 5.41379310344828 
+	Lake Erie: Dec 6.69811320754717 
+Simulated Peak Month Scenario 1
+	Lake Superior:  0 
+	Lake Michigan-Huron:  0 
+	Lake Erie:  0 
+Simulated Trough Month Scenario 1
+	Lake Superior:  0 
+	Lake Michigan-Huron:  0 
+	Lake Erie:  0 
+Simulated Peak Month Scenario 2
+	Lake Superior:  0 
+	Lake Michigan-Huron:  0 
+	Lake Erie:  0 
+Simulated Trough Month Scenario 2
+	Lake Superior:  0 
+	Lake Michigan-Huron:  0 
+	Lake Erie:  0 
+Simulated Peak Month Scenario 3
+	Lake Superior:  0 
+	Lake Michigan-Huron:  0 
+	Lake Erie:  0 
+Simulated Trough Month Scenario 3
+	Lake Superior:  0 
+	Lake Michigan-Huron:  0 
+	Lake Erie:  0 
+Scenario 1 Percentage Past Observed Threshold
+	Lake Superior: NaN %
+	Lake Michigan-Huron: NaN %
+	Lake Erie: NaN %
+Scenario 1 Percentage Past Scenario 1 Threshold
+	Lake Superior: NaN %
+	Lake Michigan-Huron: NaN %
+	Lake Erie: NaN %
+Scenario 2 Percentage Past Scenario 1 Threshold
+	Lake Superior: NaN %
+	Lake Michigan-Huron: NaN %
+	Lake Erie: NaN %
+Scenario 3 Percentage Past Scenario 1 Threshold
+	Lake Superior: NaN %
+	Lake Michigan-Huron: NaN %
+	Lake Erie: NaN %
